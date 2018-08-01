@@ -40,7 +40,7 @@
 records: [{   
 	‘price’: 0.17,   
 	‘time_tag’: 13000000,   
-},…], // 30 条   
+},…], // 29 条   
 ’time_tag’:	13000000,   
 }   
    
@@ -80,7 +80,7 @@ records: [{
 ’time_tag’:	13000000,   
 }   
    
-### 资金统计   
+### 今日资金统计   
 今日资金统计   
 **method:**  GET   
 **url：**	/api/eosram/trade_record/today_info/   
@@ -94,7 +94,7 @@ records: [{
 ’time_tag’:	13000000,   
 }   
    
-### 资金统计   
+### 30日资金统计   
 最近30日资金统计   
 **method:**  GET   
 **url：**	/api/eosram/trade_record/daily_info/   
