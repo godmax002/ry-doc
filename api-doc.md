@@ -1,6 +1,8 @@
 # api-doc   
 #rylink   
 # EOS RAM 市场   
+
+**同其他api一样，所有返回都包在{'code': '10000', 'message': '', 'data': response}中**
    
 ### 实时价格   
 **method:**  GET   
