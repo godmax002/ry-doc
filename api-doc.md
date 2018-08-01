@@ -114,7 +114,7 @@ records: [{
 ### 个人交易信息查询   
 个人最近30条交易信息，RAM持仓，RAM持仓成本，EOS持仓   
 **method:**  GET   
-**url：**	/api/eosram/trade_record/personal_info/{user_id}/   
+**url：**	/api/eosram/trade_record/user_info/{user_id}/   
 **para：** 无   
 **response:**   
 {   
