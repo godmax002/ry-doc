@@ -80,20 +80,6 @@ records: [{
 ’time_tag’:	13000000,   
 }   
    
-### 今日资金统计   
-今日资金统计   
-**method:**  GET   
-**url：**	/api/eosram/trade_record/today_info/   
-**para：** 无   
-**response:**   
-{   
-‘hst_vol’: 251.9,	 //	万EOS   
-‘today_sell_vol’:115.1,   
-‘today_buy_vol’:136.8,   
-’today_incr_vol’: -130,   
-’time_tag’:	13000000,   
-}   
-   
 ### 30日资金统计   
 最近30日资金统计   
 **method:**  GET   
