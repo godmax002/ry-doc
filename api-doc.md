@@ -4,7 +4,7 @@
    
 ### 实时价格   
 **method:**  GET   
-**url：**	/api/eosram/price/real_time   
+**url：**	/api/eosram/price/real_time/   
 **para：** 无   
 **response:**   
 {   
@@ -16,7 +16,7 @@
 ### 价格统计   
 **method:**  GET   
 **url：**	/api/eosram/price/info/   
-**para：**无   
+**para：** 无   
 **response:**   
 {   
 ‘15m_chg’:-0.31,     
@@ -32,7 +32,7 @@
 ### 近期价格   
 **method:**  GET   
 **url：**	/api/eosram/price/history/[2h | 1d | 7d | 30d]/   
-**para：**无   
+**para：** 无   
 **response:**   
 {   
 records: [{   
@@ -47,7 +47,7 @@ records: [{
 全市场最近30条交易记录   
 **method:**  GET   
 **url：**	/api/eosram/trade_record/latest/   
-**para：**无   
+**para：** 无   
 **response:**   
 {   
 records: [{   
@@ -64,7 +64,7 @@ records: [{
 全市场TOP30的大户   
 **method:**  GET   
 **url：**	/api/eosram/trade_record/tuhao/   
-**para：**无   
+**para：** 无   
 **response:**   
 {   
 records: [{   
@@ -82,7 +82,7 @@ records: [{
 今日资金统计   
 **method:**  GET   
 **url：**	/api/eosram/trade_record/today_info/   
-**para：**无   
+**para：** 无   
 **response:**   
 {   
 ‘hst_vol’: 251.9,	 //	万EOS   
@@ -96,7 +96,7 @@ records: [{
 最近30日资金统计   
 **method:**  GET   
 **url：**	/api/eosram/trade_record/daily_info/   
-**para：**无   
+**para：** 无   
 **response:**   
 {   
 records: [{   
@@ -113,7 +113,7 @@ records: [{
 个人最近30条交易信息，RAM持仓，RAM持仓成本，EOS持仓   
 **method:**  GET   
 **url：**	/api/eosram/trade_record/personal_info/{user_id}/   
-**para：**无   
+**para：** 无   
 **response:**   
 {   
 records: [{   
