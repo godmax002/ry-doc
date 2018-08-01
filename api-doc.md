@@ -11,7 +11,7 @@
 **response:**   
 {   
 ‘ram_prc’:0.31,  //	eos/kb   
-‘eos_prc’:9.00,  //	usd/eos
+‘eos_prc’:9.00,  //	usd/eos   
 ‘time_tag’:13000000 	//	数据获取时间，int   
 }   
    
