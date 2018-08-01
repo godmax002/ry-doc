@@ -25,7 +25,8 @@
 ‘1h_chg’: 0.13,   
 ‘24h_chg’: 0.1,   
 ’rsrv_ram_pct’: 75.72,   
-?   
+’rsrv_ram’: 50.11,   
+’max_ram’: 60.44,   
 ‘avg_ram_prc’:0.32,   
 ‘time_tag’:13000000 ,   
 }   
