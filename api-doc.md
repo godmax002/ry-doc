@@ -3,10 +3,10 @@
 # EOS RAM 市场   
    
 ### 实时价格   
-*method:*  GET   
-*url：*	/api/eosram/price/real_time   
-*para：* 无   
-*response:*   
+**method:**  GET   
+**url：**	/api/eosram/price/real_time   
+**para：** 无   
+**response:**   
 {   
 ‘ram_price’:0.31,  //	eos/kb   
 ‘time_tag’:13000000 	//	数据获取时间，int   
@@ -14,10 +14,10 @@
    
    
 ### 价格统计   
-*method:*  GET   
-*url：*	/api/eosram/price/info/   
-*para：*无   
-*response:*   
+**method:**  GET   
+**url：**	/api/eosram/price/info/   
+**para：**无   
+**response:**   
 {   
 ‘15m_chg’:-0.31,     
 ‘1h_chg’: 0.13,   
@@ -30,10 +30,10 @@
    
    
 ### 近期价格   
-*method:*  GET   
-*url：*	/api/eosram/price/history/[2h | 1d | 7d | 30d]/   
-*para：*无   
-*response:*   
+**method:**  GET   
+**url：**	/api/eosram/price/history/[2h | 1d | 7d | 30d]/   
+**para：**无   
+**response:**   
 {   
 records: [{   
 	‘price’: 0.17,   
@@ -45,10 +45,10 @@ records: [{
    
 ### 交易记录   
 全市场最近30条交易记录   
-*method:*  GET   
-*url：*	/api/eosram/trade_record/latest/   
-*para：*无   
-*response:*   
+**method:**  GET   
+**url：**	/api/eosram/trade_record/latest/   
+**para：**无   
+**response:**   
 {   
 records: [{   
 	‘time_tag’: 13000000,   
@@ -62,10 +62,10 @@ records: [{
    
 ### 大户排行   
 全市场TOP30的大户   
-*method:*  GET   
-*url：*	/api/eosram/trade_record/tuhao/   
-*para：*无   
-*response:*   
+**method:**  GET   
+**url：**	/api/eosram/trade_record/tuhao/   
+**para：**无   
+**response:**   
 {   
 records: [{   
 	‘rank’: 1,   
@@ -80,10 +80,10 @@ records: [{
    
 ### 资金统计   
 今日资金统计   
-*method:*  GET   
-*url：*	/api/eosram/trade_record/today_info/   
-*para：*无   
-*response:*   
+**method:**  GET   
+**url：**	/api/eosram/trade_record/today_info/   
+**para：**无   
+**response:**   
 {   
 ‘hst_vol’: 251.9,	 //	万EOS   
 ‘today_sell_vol’:115.1,   
@@ -94,10 +94,10 @@ records: [{
    
 ### 资金统计   
 最近30日资金统计   
-*method:*  GET   
-*url：*	/api/eosram/trade_record/daily_info/   
-*para：*无   
-*response:*   
+**method:**  GET   
+**url：**	/api/eosram/trade_record/daily_info/   
+**para：**无   
+**response:**   
 {   
 records: [{   
 	‘date_tag’: ’07-18’,   
@@ -111,10 +111,10 @@ records: [{
    
 ### 个人交易信息查询   
 个人最近30条交易信息，RAM持仓，RAM持仓成本，EOS持仓   
-*method:*  GET   
-*url：*	/api/eosram/trade_record/personal_info/{user_id}/   
-*para：*无   
-*response:*   
+**method:**  GET   
+**url：**	/api/eosram/trade_record/personal_info/{user_id}/   
+**para：**无   
+**response:**   
 {   
 records: [{   
 	‘time_tag’: 13000000,   
