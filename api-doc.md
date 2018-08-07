@@ -22,9 +22,9 @@
 **para：** 无   
 **response:**   
 {   
-‘15m_chg’:-0.31,     
-‘1h_chg’: 0.13,   
-‘24h_chg’: 0.1,   
+‘1m_chg’:-0.31,     
+‘10m_chg’: 0.13,   
+‘60m_chg’: 0.1,   
 ’rsrv_ram_pct’: 75.72,   
 ’rsrv_ram’: 50.11,   
 ’max_ram’: 60.44,   
@@ -35,7 +35,7 @@
    
 ### 近期价格   
 **method:**  GET   
-**url：**	/api/eosram/price/history/[2h | 1d | 7d | 30d]/   
+**url：**	/api/eosram/price/history/[10m | 1h | 24h | 7d | all]/   
 **para：** 无   
 **response:**   
 {   
