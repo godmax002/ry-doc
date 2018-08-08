@@ -96,6 +96,7 @@ records: [{
 	‘sell_vol’:207.5,   
 	‘incr_vol’:-0.4,   
 },…], // 30 条   
+time_tag: 1300000,
 }   
    
    
