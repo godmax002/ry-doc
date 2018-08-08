@@ -74,7 +74,7 @@ records: [{
 records: [{   
 	‘rank’: 1,   
 	‘name’:’wangruixiwww’,   
-	‘ram’:1.88,	// GB   
+	‘ram’:1880	// MB   
 	‘price’:0.6,   
 },…], // 30 条   
 ’top_100_pct’:	44.33,   
