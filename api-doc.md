@@ -39,6 +39,7 @@
 **url：**   /api/eosram/price/history/[10m | 1h | 24h | 7d | all]/     
 **para：** 无     
 **response:**     
+```json
 {     
 records: [{     
     'price': 0.17,     
@@ -46,6 +47,7 @@ records: [{
 },…], // 29 条     
 'time_tag': 13000000,     
 }     
+```
 **error**     
 {  
     "code": "10601",  
@@ -58,6 +60,7 @@ records: [{
 **url：**   /api/eosram/trade_record/latest/     
 **para：** 无     
 **response:**     
+```json
 {     
 records: [{     
     'time_tag': 13000000,     
@@ -67,6 +70,7 @@ records: [{
 },…], // 30 条     
 'time_tag': 13000000,     
 }     
+```
      
      
 ### 大户排行     
@@ -75,6 +79,7 @@ records: [{
 **url：**   /api/eosram/trade_record/tuhao/     
 **para：** 无     
 **response:**     
+```json
 {     
 records: [{     
     'rank': 1,     
@@ -86,6 +91,7 @@ records: [{
 'top_100_prc':  0.22,     
 'time_tag': 13000000,     
 }     
+```
      
 ### 30日资金统计     
 最近30日资金统计     
@@ -93,6 +99,7 @@ records: [{
 **url：**   /api/eosram/trade_record/daily_info/     
 **para：** 无     
 **response:**     
+```json
 {     
 records: [{     
     'date_tag': '07-18',     
@@ -103,6 +110,7 @@ records: [{
 },…], // 30 条     
 time_tag: 1300000,  
 }     
+```
      
      
 ### 个人交易信息查询     
@@ -111,6 +119,7 @@ time_tag: 1300000,
 **url：**   /api/eosram/trade_record/user_info/{eos_account}/     
 **para：** 无     
 **response:**     
+```json
 {     
 records: [{     
     'time_tag': 13000000,     
@@ -123,6 +132,7 @@ records: [{
 'eos_vol':  100.22,     
 'time_tag': 13000000,     
 }     
+```
 **error**    
 {  
     "code": "10601",  
