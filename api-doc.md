@@ -3,6 +3,7 @@
 # EOS RAM 市场   
 
 **同其他api一样，所有返回都包在{'code': '10000', 'message': '', 'data': response}中**
+**返回单位： 所有ram都用kb，所有eos都是1eos，所有百分比都是1% **
    
 ### 实时价格   
 **method:**  GET   
@@ -45,7 +46,11 @@ records: [{
 },…], // 29 条   
 ’time_tag’:	13000000,   
 }   
-   
+**error**   
+{
+    "code": "10601",
+    "message": "查询日期有误"
+}
    
 ### 交易记录   
 全市场最近30条交易记录   
@@ -118,3 +123,8 @@ records: [{
 ‘eos_vol’: 	100.22,   
 ’time_tag’:	13000000,   
 }   
+**error**
+{
+    "code": "10601",
+    "message": "查无此人"
+}
