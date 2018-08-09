@@ -90,7 +90,7 @@
 "records": [{     
     "rank": 1,     
     "name":"wangruixiwww",     
-    "ram":1880  # MB     
+    "ram":1880000  # KB     
     "price":0.6,     
 },…], # 30 条     
 "top_100_pct":  44.33,     
