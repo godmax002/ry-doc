@@ -12,9 +12,9 @@
 **response:**     
 ```json
 {     
-"ram_prc":0.31,  // eos/kb     
-"eos_prc":9.00,  // usd/eos     
-"time_tag":13000000     //  数据获取时间，int     
+"ram_prc":0.31,  # eos/kb     
+"eos_prc":9.00,  # usd/eos     
+"time_tag":13000000     #  数据获取时间，int     
 }     
 ```
      
@@ -45,10 +45,10 @@
 **response:**     
 ```json
 {     
-records: [{     
+"records": [{     
     "price": 0.17,     
     "time_tag": 13000000,     
-},…], // 29 条     
+},…], # 29 条     
 "time_tag": 13000000,     
 }     
 ```
@@ -68,10 +68,10 @@ records: [{
 {     
 "records": [{     
     "time_tag": 13000000,     
-    "name": guojing12345,     
-    "action": [0|1],        // 0:买， 1：卖     
+    "name": "guojing12345",     
+    "action": [0|1],        # 0:买， 1：卖     
     "eos"：10.12，     
-},…], // 30 条     
+},…], # 30 条     
 "time_tag": 13000000,     
 }     
 ```
@@ -88,9 +88,9 @@ records: [{
 "records": [{     
     "rank": 1,     
     "name":"wangruixiwww",     
-    "ram":1880  // MB     
+    "ram":1880  # MB     
     "price":0.6,     
-},…], // 30 条     
+},…], # 30 条     
 "top_100_pct":  44.33,     
 "top_100_prc":  0.22,     
 "time_tag": 13000000,     
@@ -111,7 +111,7 @@ records: [{
     "buy_vol": 207.9,     
     "sell_vol":207.5,     
     "incr_vol":-0.4,     
-},…], // 30 条     
+},…], # 30 条     
 "time_tag": 1300000,  
 }     
 ```
@@ -127,12 +127,12 @@ records: [{
 {     
 "records": [{     
     "time_tag": 13000000,     
-    "name": guojing12345,     
-    "action": [0|1],        // 0:买， 1：卖     
+    "name": "guojing12345",     
+    "action": [0|1],        # 0:买， 1：卖     
     "eos"：10.12，     
-},…], // 30 条     
-"ram_vol":  44.33,  //KB     
-"ram_prc":  0.2233, // eos/kb     
+},…], # 30 条     
+"ram_vol":  44.33,  #KB     
+"ram_prc":  0.2233, # eos/kb     
 "eos_vol":  100.22,     
 "time_tag": 13000000,     
 }     
