@@ -2,7 +2,7 @@
 #rylink     
 # EOS RAM 市场     
   
-**同其他api一样，所有返回都包在{'code': '10000', 'message': '', 'data': response}中**    
+**同其他api一样，所有返回都包在{"code": "10000", "message": "", "data": response}中**    
 **返回单位： 所有ram都用kb，所有eos都是1eos，所有百分比都是1%**    
      
 ### 实时价格     
@@ -10,11 +10,13 @@
 **url：**   /api/eosram/price/real_time/     
 **para：** 无     
 **response:**     
+```json
 {     
-'ram_prc':0.31,  // eos/kb     
-'eos_prc':9.00,  // usd/eos     
-'time_tag':13000000     //  数据获取时间，int     
+"ram_prc":0.31,  // eos/kb     
+"eos_prc":9.00,  // usd/eos     
+"time_tag":13000000     //  数据获取时间，int     
 }     
+```
      
      
 ### 价格统计     
@@ -22,16 +24,18 @@
 **url：**   /api/eosram/price/info/     
 **para：** 无     
 **response:**     
+```json
 {     
-'1m_chg':-0.31,       
-'10m_chg': 0.13,     
-'60m_chg': 0.1,     
-'rsrv_ram_pct': 75.72,     
-'rsrv_ram': 50.11,     
-'max_ram': 60.44,     
-'avg_ram_prc':0.32,     
-'time_tag':13000000 ,     
+"1m_chg":-0.31,       
+"10m_chg": 0.13,     
+"60m_chg": 0.1,     
+"rsrv_ram_pct": 75.72,     
+"rsrv_ram": 50.11,     
+"max_ram": 60.44,     
+"avg_ram_prc":0.32,     
+"time_tag":13000000 ,     
 }     
+```
      
      
 ### 近期价格     
@@ -42,10 +46,10 @@
 ```json
 {     
 records: [{     
-    'price': 0.17,     
-    'time_tag': 13000000,     
+    "price": 0.17,     
+    "time_tag": 13000000,     
 },…], // 29 条     
-'time_tag': 13000000,     
+"time_tag": 13000000,     
 }     
 ```
 **error**     
@@ -62,13 +66,13 @@ records: [{
 **response:**     
 ```json
 {     
-records: [{     
-    'time_tag': 13000000,     
-    'name': guojing12345,     
-    'action': [0|1],        // 0:买， 1：卖     
-    'eos'：10.12，     
+"records": [{     
+    "time_tag": 13000000,     
+    "name": guojing12345,     
+    "action": [0|1],        // 0:买， 1：卖     
+    "eos"：10.12，     
 },…], // 30 条     
-'time_tag': 13000000,     
+"time_tag": 13000000,     
 }     
 ```
      
@@ -81,15 +85,15 @@ records: [{
 **response:**     
 ```json
 {     
-records: [{     
-    'rank': 1,     
-    'name':'wangruixiwww',     
-    'ram':1880  // MB     
-    'price':0.6,     
+"records": [{     
+    "rank": 1,     
+    "name":"wangruixiwww",     
+    "ram":1880  // MB     
+    "price":0.6,     
 },…], // 30 条     
-'top_100_pct':  44.33,     
-'top_100_prc':  0.22,     
-'time_tag': 13000000,     
+"top_100_pct":  44.33,     
+"top_100_prc":  0.22,     
+"time_tag": 13000000,     
 }     
 ```
      
@@ -101,14 +105,14 @@ records: [{
 **response:**     
 ```json
 {     
-records: [{     
-    'date_tag': '07-18',     
-    'vol': 415.4 ,       
-    'buy_vol': 207.9,     
-    'sell_vol':207.5,     
-    'incr_vol':-0.4,     
+"records": [{     
+    "date_tag": "07-18",     
+    "vol": 415.4 ,       
+    "buy_vol": 207.9,     
+    "sell_vol":207.5,     
+    "incr_vol":-0.4,     
 },…], // 30 条     
-time_tag: 1300000,  
+"time_tag": 1300000,  
 }     
 ```
      
@@ -121,16 +125,16 @@ time_tag: 1300000,
 **response:**     
 ```json
 {     
-records: [{     
-    'time_tag': 13000000,     
-    'name': guojing12345,     
-    'action': [0|1],        // 0:买， 1：卖     
-    'eos'：10.12，     
+"records": [{     
+    "time_tag": 13000000,     
+    "name": guojing12345,     
+    "action": [0|1],        // 0:买， 1：卖     
+    "eos"：10.12，     
 },…], // 30 条     
-'ram_vol':  44.33,  //KB     
-'ram_prc':  0.2233, // eos/kb     
-'eos_vol':  100.22,     
-'time_tag': 13000000,     
+"ram_vol":  44.33,  //KB     
+"ram_prc":  0.2233, // eos/kb     
+"eos_vol":  100.22,     
+"time_tag": 13000000,     
 }     
 ```
 **error**    
