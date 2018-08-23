@@ -54,3 +54,7 @@ chain_api: /v1/wallet/unlock -X POST -d '["eos_account_name", "password"]'
 ### 钱包签名
 chain_api: 先用cleos实现转账，无需签名
 
+# 客户端给h5的提供的接口
+-  转账
+-  getTableRows
+
