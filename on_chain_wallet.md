@@ -1,4 +1,4 @@
-# ry-doc  
+# EOS wallet  
   
   
 同其他api一样，所有返回都包在{"code": "10000", "message": "", "data": response}中  
