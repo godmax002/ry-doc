@@ -39,6 +39,7 @@ chain_api: /v1/chain/get_account -X POST -d '{"account_name":"hoowalletpro"}'
 从火币获取  
 ### ram价格，使用率  
 chain_api: /v1/chain/get_table_rows -X POST -d '{"scope":"eosio", "code":"eosio", "table":"rammarket", "json": true}'  
+上述返回中的eos/ram * 1024 就是ram的实时价格, 单位eos/kb
 ### getTableRows  
 chain_api: /v1/chain/get_table_rows -X POST -d '{"scope":"inita", "code":"currency", "table":"account", "json": true}'  
   
