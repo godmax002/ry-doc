@@ -23,7 +23,7 @@ b. 返回封装
 2. 地址注册
 3. 公司注册地址查询
 4. 地址余额查询
-path: 	/<coin_name>/balance/<address>/  
+path: 	/{coin_name}/balance/{address}/  
  
 return:
 ```json
@@ -34,7 +34,7 @@ return:
 }
 ```
 5. 地址流水查询
-path: 	/<coin_name>/transactions/<address>/ 
+path: 	/{coin_name}/transactions/{address}/ 
  
 return:
 ```json
@@ -53,7 +53,7 @@ return:
 ...]
 ```
 6. 地址utxo查询，用于交易构造
-path:	/<coin_name>/utxos/<address>/
+path:	/{coin_name}/utxos/{address}/
  
 return:
 ```json
