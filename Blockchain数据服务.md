@@ -38,10 +38,12 @@ path: 	/{coin_name}/transactions/{address}/
  
 return:
 ```json
+{
+'coin_name'
+'address'
+'transactions':
 [
 {
-'coin_name',
-'address',
 'block_height', 
 'block_hash'
 'block_timstamp'
@@ -52,6 +54,7 @@ return:
 'to':[{'address', 'amount', 'memo'}]
 },
 ...]
+}
 ```
 6. 地址utxo查询，用于交易构造
 path:	/{coin_name}/utxos/{address}/
