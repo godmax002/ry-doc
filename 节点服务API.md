@@ -67,5 +67,4 @@ http://<内网IP>:6000/<api_path>
 ### 发送交易
 /transfer/<to_address>/<amount>
 
-
 {"trx_id":123}
