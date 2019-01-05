@@ -8,10 +8,14 @@ http://<内网IP>:6000/<api_path>
 
 ### 区块高度
 /block/best/height/
+
+
 { "height": 123 }
 
 ### 区块信息
 /block/<height>/
+	
+	
 ```
 {
 "block": 
@@ -56,10 +60,14 @@ http://<内网IP>:6000/<api_path>
 
 ### 钱包余额
 /balance/
+
+
 ["address",  amount]
 实例
 [‘HXNUZSB27eoKGki79mioGrS5YyKxdXEzvQu’, 123]
 
 ### 发送交易
 /transfer/<to_address>/<amount}>/
+
+
 {"trx_id":123}
