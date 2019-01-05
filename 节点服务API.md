@@ -61,7 +61,9 @@ http://{内网IP}:6000/{api_path}
 
 
 ["address",  amount]
+
 实例
+
 [‘HXNUZSB27eoKGki79mioGrS5YyKxdXEzvQu’, 123]
 
 ### 发送交易
