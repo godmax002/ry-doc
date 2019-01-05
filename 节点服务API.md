@@ -1,6 +1,6 @@
 # 节点服务API
 ### 路径
-http:<内网IP>:6000/<api_path>
+http://<内网IP>:6000/<api_path>
 
 ### 请求出错
 统一返回
