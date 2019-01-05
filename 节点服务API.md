@@ -9,7 +9,6 @@ http://<内网IP>:6000/<api_path>
 ### 区块高度
 /block/best/height/
 
-
 { "height": 123 }
 
 ### 区块信息
