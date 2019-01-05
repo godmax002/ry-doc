@@ -4,14 +4,14 @@ http://<内网IP>:6000/<api_path>
 
 ### 请求出错
 统一返回
-{“error”: ‘’ error message”}
+{"error":  "error message"}
 
 ### 区块高度
-_block_best_height_
-{ “height”: 123 }
+/block/best/height/
+{ "height": 123 }
 
 ### 区块信息
-_block_<height>/
+/block/<height>/
 ```
 {
 "block": 
@@ -55,11 +55,11 @@ _block_<height>/
 ```
 
 ### 钱包余额
-_balance_
-[‘address’,  amount]
+/balance/
+["address",  amount]
 实例
 [‘HXNUZSB27eoKGki79mioGrS5YyKxdXEzvQu’, 123]
 
 ### 发送交易
-_transfer_<to_address>_<amount}>_
-{“trx_id”:123}
+/transfer/<to_address>/<amount}>/
+{"trx_id":123}
