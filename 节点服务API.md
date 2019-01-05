@@ -1,18 +1,18 @@
 # 节点服务API
 ### 路径
-http://<内网IP>:6000/<api_path>
+http://{内网IP}:6000/{api_path}
 
 ### 请求出错
 统一返回
 {"error":  "error message"}
 
 ### 区块高度
-/block/best/height
+/block/best/height/
 
 { "height": 123 }
 
 ### 区块信息
-/block/<height>
+/block/{height}/
 	
 ```
 {
@@ -57,7 +57,7 @@ http://<内网IP>:6000/<api_path>
 ```
 
 ### 钱包余额
-/balance
+/balance/
 
 
 ["address",  amount]
@@ -65,6 +65,6 @@ http://<内网IP>:6000/<api_path>
 [‘HXNUZSB27eoKGki79mioGrS5YyKxdXEzvQu’, 123]
 
 ### 发送交易
-/transfer/<to_address>/<amount>
+/transfer/{to_address}/{amount}/
 
 {"trx_id":123}
