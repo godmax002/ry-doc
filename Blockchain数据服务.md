@@ -34,13 +34,13 @@ data是需要post的数据，get时data为None
     ```python
     生成待加密字符串
     data_bytes = json.dumps(data, sort_keys=True).encode() # data升序排列，取json值
-    data_sha256 = sha256(data_bytes) # sha256对data做hash
+    data_sha256 = SHA256.new(data_bytes).digest() # sha256对data做hash
     expire = now().shift(minutes=30).timestamp # 30分钟后过期
     to_sign = ('%s:%s:'%(self.user_id, expire)).encode() + data_sha256 # user_id:expire:data_sha256组成待签名字符串
 
     使用公钥加密
     sign = pub_key.encrypt(to_sign) # 使用公钥加密待签名字符串
-    auth = user_id:expire:sign # userid:expire:sign连接组成auth
+    auth = user_id:expire:sign.hex() # userid:expire:sign.hex连接组成auth
     ```
     
 
