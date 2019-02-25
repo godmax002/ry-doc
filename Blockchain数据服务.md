@@ -23,13 +23,13 @@ b. 返回格式
 
 1.请求服务器时使用pub_key做数据签名
 
-    用户请求服务器需要在请求的header中带一个auth参数,auth的生成方法如下
+用户请求服务器需要在请求的header中带一个auth参数,auth的生成方法如下
 
-    需要的数据：user_id, pub_key, data, expire
+需要的数据：user_id, pub_key, data, expire
 
-    expire是过期时间
+expire是过期时间
 
-    data是需要post的数据，get时data为None
+data是需要post的数据，get时data为None
 
     ```python
     生成待加密字符串
@@ -46,7 +46,7 @@ b. 返回格式
 
 2.服务器发送通知时, 客户端使用pub_key校验数据发送方身份
 
-    服务器通知客户端时，会使用如上相同的方法构造一个待签名的字符串，然后使用自己的私钥签名。客户端用自己的公钥校验就可以了
+  服务器通知客户端时，会使用如上相同的方法构造一个待签名的字符串，然后使用自己的私钥签名。客户端用自己的公钥校验就可以了
 
 
 ### 账户API
