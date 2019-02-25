@@ -65,15 +65,19 @@ return:
 'trx_notify_url',
 'description',
 }
+```
 
 3. 账户配置修改
 
 path:   /user/conf/set
 
 post data:
+
+```json
 {'trx_notify_url',
 'description'
 }
+```
 
 return:
 ```json
@@ -100,7 +104,9 @@ return:
 path: /user/address/add/{coin_name}
 
 post data:
+```json
 {'address': [...]}
+```
 
 return:
 ```json
@@ -114,7 +120,9 @@ return:
 path: /user/address/rm/{coin_name}
 
 post data:
+```json
 {'address': [...]}
+```
 
 return:
 ```json
@@ -128,11 +136,13 @@ return:
 path: /user/balance/{coin_name}
 
 return:
+```json
 {
 'coin_name1': amount1,
 'coin_name2': amount2
 ...
 }
+```
 
 8. 账户交易推送
 
@@ -149,6 +159,7 @@ return:
 'to':[{'address', 'amount', 'memo'}]
 }
 ```
+
 9. 账户区块链浏览器
 
 开发中
