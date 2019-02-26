@@ -19,7 +19,9 @@ b. 返回格式
 ```
 
 ### 加密和用户认证
-管理员会替用户注册账户，并给用户user_id 和pub_key
+秘钥是用RSA算法生成，客户持有公钥，服务器端持有私钥。
+
+管理员会替用户注册账户，并给用户user_id 和pub_key。
 
 1.请求服务器时使用pub_key做数据签名
 
@@ -33,7 +35,7 @@ data是需要post的数据，get时data为None
 
     ```python
     生成待加密字符串
-    data_bytes = json.dumps(data, sort_keys=True).encode() # data升序排列，取json值
+    data_bytes = json.dumps(data, sort_keys=True).encode() # 对data做序列化：data升序排列，取json值
     data_sha256 = SHA256.new(data_bytes).digest() # sha256对data做hash
     expire = now().shift(minutes=30).timestamp # 30分钟后过期
     to_sign = ('%s:%s:'%(self.user_id, expire)).encode() + data_sha256 # user_id:expire:data_sha256组成待签名字符串
@@ -42,11 +44,35 @@ data是需要post的数据，get时data为None
     sign = pub_key.encrypt(to_sign) # 使用公钥加密待签名字符串
     auth = user_id:expire:sign.hex() # userid:expire:sign.hex连接组成auth
     ```
-    
+实例：
+私钥为：
+b'-----BEGIN RSA PRIVATE KEY-----\nMIICXAIBAAKBgQC2hbhi7pszx5eN6xqdGBUi4dDmNq7Cy//VoMTJVRoblwLQwZ+J\nKzi5uOfqxdDtJyso+DQzw1Oo0XZtLKSyY7CMnzjfwbRMzP5Zt4c2mvU+aL16Aat5\nriAgJqXS3tTHjulxTQMlTh9jMXc7PgqITBy4IkeVamvNdumEJ9kzldJzqwIDAQAB\nAoGAB8g6WYtJNjbN3LZA3xJjoFDzRtPC0eQxyqpg3uh67+D9CiGthC3eUCHDFok2\ni4bnZJVLtdURd11gSKe0PqcfzrK6/VJDsdMqrwjVScJfg9cihJxBrRDCZh/Lo9hl\nLQxg2LA0I1nOQx+mV9fYv8CmMoeynrn+g4VlOTVWq8hVS2UCQQC9b1LJTEK23oS9\nEPa6E7Bd/wzWygTKRmptUojjcSWvrFs5wRZ0sRtJxob6kjb6tTze4QWXyO0HzzCV\n7cbqHkktAkEA9qiUWklHYo/J0zxudeJiogUE9wpmVDxZm1Zyb/P9BQoutc+AsoJY\nm4evthAPWUHaCL9n0SNga16344Jr8+KHNwJAMg1L7mv75J1+rQXiat/w5aUSG15d\nTaS1UhVQneezcWs031mpOUPiVefimiov5KYmYy1JcQVhu4J+795XhFxkMQJBAJpy\n8voZ+o4X9UvFAnHkgNhtBi/enjbO11kyZ1P81olqV9dWiIK+pdc1vmvlYIcGeg2S\nNOK7ISv6UnEugIRlaz8CQHEBL0amsKHI8GQlkvyVYkvAOHQS5IQrAXrwwQ/1wBU2\nK6620df7f7ZqZINR50neOsVVhUJNXsW5rx0EI418P7w=\n-----END RSA PRIVATE KEY-----'
+公钥为
+b'-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2hbhi7pszx5eN6xqdGBUi4dDm\nNq7Cy//VoMTJVRoblwLQwZ+JKzi5uOfqxdDtJyso+DQzw1Oo0XZtLKSyY7CMnzjf\nwbRMzP5Zt4c2mvU+aL16Aat5riAgJqXS3tTHjulxTQMlTh9jMXc7PgqITBy4IkeV\namvNdumEJ9kzldJzqwIDAQAB\n-----END PUBLIC KEY-----'
+
+假定user_id=1,data={"k2":"v2", "k1":"v1"}, expire=1551144911则
+data_bytes=b'{"k1": "v1", "k2": "v2"}', 
+data_sha256=b'\x90|\x93I\xee(?\x0c\xb6\x151b+\xc0\xbb>H#_;\t4\xd6\x9a\x83\x11\x1e5v\xa9\x0c9', 
+to_sign=b'1:1551144911:\x90|\x93I\xee(?\x0c\xb6\x151b+\xc0\xbb>H#_;\t4\xd6\x9a\x83\x11\x1e5v\xa9\x0c9'
+sign = b'6qKA,?\xb5\xab\x06i\xaf\xd0\\v\x81\x8f\xbe\x18.;\xd8\x8aG\xf4\xca2\xcb\x03K\xcb\xa8\x96\xc0\x8dW\x04\xa8\xf7\x08\xb8\x03\x90eXF\x04[+\\P-\x04\xe6\xd4\x10<c\xf5\xf8\xe3\xe8\xa2q\xe6\x9f\xec.\xa9e\x81\xff\x0b;\x9f>z8r\xd1\xae(\x00\x02\x12\xcbm\xfd\xdc\xe3\xf8I\xf3\xe3\\j+<\x1a\xc2\x88\xc1\xea2\x1f\xe6\x94\x14<\xaf\xc2s\xecF6~\x9e\xfb\x99(\x81\x1bJE\xb1\x1d\x8b\xeaI'
+ uth='1:1551144911:14179476d8d13f6bc93de43fc4b691d6ca5f27b98b0c7a30388aed20b367f7e45ba7aeb8914001af7c8ddcdf1f726ec8959794ae2231471e4e2882372a8c51b78149016488a04322191c4cf2bba18a0369fe01ad99b7007b202253baeb71b11e19daefbd046a02adfa4b2d277356d618710d46bddaf876ae4fd095bc0ddbdbc9'   
 
 2.服务器发送通知时, 客户端使用pub_key校验数据发送方身份
 
-  服务器通知客户端时，会使用如上相同的方法构造一个待签名的字符串，然后使用自己的私钥签名。客户端用自己的公钥校验就可以了
+服务器通知客户端时，会使用如上相同的方法构造一个待签名的字符串，然后使用自己的私钥签名。客户端用自己的公钥校验就可以了
+
+服务器回调时也会带上auth头，客户端从中取出expire和sign，data是服务器post的数据
+
+```python
+assert now > expire # 校验超时
+data_bytes = json.dumps(data, sort_keys=True).encode() # 同上对data做序列化
+data_sha256 = SHA256.new(data_bytes).digest() # 同上使用sha256对data做hash
+to_sign = ('%s:%s:'%(user_id, expire)).encode() + data_sha256 # 同上获取待签名字符串，服务器的user_id固定为0
+sign_hex = bytes.fromhex(sign) # sign从hex转为bytes
+pub_key_verify(pub_key, to_sign, sign_hex) # 公钥校验签名
+```
+
+
 
 
 ### 账户API
