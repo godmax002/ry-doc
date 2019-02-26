@@ -45,16 +45,25 @@ data是需要post的数据，get时data为None
     auth = user_id:expire:sign.hex() # userid:expire:sign.hex连接组成auth
     ```
 实例：
+
 私钥为：
+
 b'-----BEGIN RSA PRIVATE KEY-----\nMIICXAIBAAKBgQC2hbhi7pszx5eN6xqdGBUi4dDmNq7Cy//VoMTJVRoblwLQwZ+J\nKzi5uOfqxdDtJyso+DQzw1Oo0XZtLKSyY7CMnzjfwbRMzP5Zt4c2mvU+aL16Aat5\nriAgJqXS3tTHjulxTQMlTh9jMXc7PgqITBy4IkeVamvNdumEJ9kzldJzqwIDAQAB\nAoGAB8g6WYtJNjbN3LZA3xJjoFDzRtPC0eQxyqpg3uh67+D9CiGthC3eUCHDFok2\ni4bnZJVLtdURd11gSKe0PqcfzrK6/VJDsdMqrwjVScJfg9cihJxBrRDCZh/Lo9hl\nLQxg2LA0I1nOQx+mV9fYv8CmMoeynrn+g4VlOTVWq8hVS2UCQQC9b1LJTEK23oS9\nEPa6E7Bd/wzWygTKRmptUojjcSWvrFs5wRZ0sRtJxob6kjb6tTze4QWXyO0HzzCV\n7cbqHkktAkEA9qiUWklHYo/J0zxudeJiogUE9wpmVDxZm1Zyb/P9BQoutc+AsoJY\nm4evthAPWUHaCL9n0SNga16344Jr8+KHNwJAMg1L7mv75J1+rQXiat/w5aUSG15d\nTaS1UhVQneezcWs031mpOUPiVefimiov5KYmYy1JcQVhu4J+795XhFxkMQJBAJpy\n8voZ+o4X9UvFAnHkgNhtBi/enjbO11kyZ1P81olqV9dWiIK+pdc1vmvlYIcGeg2S\nNOK7ISv6UnEugIRlaz8CQHEBL0amsKHI8GQlkvyVYkvAOHQS5IQrAXrwwQ/1wBU2\nK6620df7f7ZqZINR50neOsVVhUJNXsW5rx0EI418P7w=\n-----END RSA PRIVATE KEY-----'
+
 公钥为
+
 b'-----BEGIN PUBLIC KEY-----\nMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC2hbhi7pszx5eN6xqdGBUi4dDm\nNq7Cy//VoMTJVRoblwLQwZ+JKzi5uOfqxdDtJyso+DQzw1Oo0XZtLKSyY7CMnzjf\nwbRMzP5Zt4c2mvU+aL16Aat5riAgJqXS3tTHjulxTQMlTh9jMXc7PgqITBy4IkeV\namvNdumEJ9kzldJzqwIDAQAB\n-----END PUBLIC KEY-----'
 
 假定user_id=1,data={"k2":"v2", "k1":"v1"}, expire=1551144911则
+
 data_bytes=b'{"k1": "v1", "k2": "v2"}', 
+
 data_sha256=b'\x90|\x93I\xee(?\x0c\xb6\x151b+\xc0\xbb>H#_;\t4\xd6\x9a\x83\x11\x1e5v\xa9\x0c9', 
+
 to_sign=b'1:1551144911:\x90|\x93I\xee(?\x0c\xb6\x151b+\xc0\xbb>H#_;\t4\xd6\x9a\x83\x11\x1e5v\xa9\x0c9'
+
 sign = b'6qKA,?\xb5\xab\x06i\xaf\xd0\\v\x81\x8f\xbe\x18.;\xd8\x8aG\xf4\xca2\xcb\x03K\xcb\xa8\x96\xc0\x8dW\x04\xa8\xf7\x08\xb8\x03\x90eXF\x04[+\\P-\x04\xe6\xd4\x10<c\xf5\xf8\xe3\xe8\xa2q\xe6\x9f\xec.\xa9e\x81\xff\x0b;\x9f>z8r\xd1\xae(\x00\x02\x12\xcbm\xfd\xdc\xe3\xf8I\xf3\xe3\\j+<\x1a\xc2\x88\xc1\xea2\x1f\xe6\x94\x14<\xaf\xc2s\xecF6~\x9e\xfb\x99(\x81\x1bJE\xb1\x1d\x8b\xeaI'
+
  uth='1:1551144911:14179476d8d13f6bc93de43fc4b691d6ca5f27b98b0c7a30388aed20b367f7e45ba7aeb8914001af7c8ddcdf1f726ec8959794ae2231471e4e2882372a8c51b78149016488a04322191c4cf2bba18a0369fe01ad99b7007b202253baeb71b11e19daefbd046a02adfa4b2d277356d618710d46bddaf876ae4fd095bc0ddbdbc9'   
 
 2.服务器发送通知时, 客户端使用pub_key校验数据发送方身份
