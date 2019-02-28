@@ -182,16 +182,18 @@ return:
 8. 账户交易推送
 
 ```
-{
-'coin_name',
-'block_height', 
-'block_hash'
-'block_timstamp'
-'tx_hash', 
-'is_in': 是转入还是转出, 
-'fee', 
-'from':[{'address', 'amount'}], 
-'to':[{'address', 'amount', 'memo'}]
+{'coin_type' 币种
+'is_in' 是否转入
+'block_height' 块高度
+'timestamp' 块时间
+'transaction_id' 交易ID
+'trx_n' 交易序号
+'from_address' 来源地址
+'to_address' 目的地址
+'memo' memo
+'amount' 交易金额
+'fee' 交易费用
+'confirmations' 确认数
 }
 ```
 
