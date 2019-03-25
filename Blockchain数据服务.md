@@ -140,7 +140,7 @@ path: /user/address/add/{coin_name}
 
 post data:
 ```json
-{'address': [...]}
+{'address': [...], 'user_sub_id':12}
 ```
 
 return:
@@ -194,6 +194,7 @@ return:
 'amount' 交易金额
 'fee' 交易费用
 'confirmations' 确认数
+'user_sub_id'	用户子账户id
 }
 ```
 
