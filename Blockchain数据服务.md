@@ -188,6 +188,7 @@ return:
 'timestamp' 块时间
 'transaction_id' 交易ID
 'trx_n' 交易序号
+'from_trx_id' utxo来源
 'from_address' 来源地址
 'to_address' 目的地址
 'memo' memo
